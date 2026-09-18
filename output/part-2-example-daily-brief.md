@@ -26,6 +26,8 @@ Illustrative output based on the September 18 Part 1 review, including September
 
 **Still unknown:** the external contact, delivery commitment, and needed-by date for each dependency. Open issues alone do not show that implementation is stalled.
 
+**Dependency chain to validate:** external branch-ID or library release → [#11445](https://github.com/ZcashFoundation/zebra/issues/11445) → [#11446](https://github.com/ZcashFoundation/zebra/issues/11446) → NU7 testnet and mainnet readiness. This is a proposed relationship, not a confirmed block. If the upstream date moves, I would check the linked issues and the NU7 readiness checkpoint before calling downstream work at risk.
+
 ### 3. Key-conversion fix: confirm reviewer pickup
 
 **Evidence:** [ed25519-zebra #206](https://github.com/ZcashFoundation/ed25519-zebra/pull/206) addresses a key-conversion correctness problem. In the reviewed snapshot, it has an acknowledgment but no recorded review or requested reviewer.

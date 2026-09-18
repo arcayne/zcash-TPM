@@ -32,6 +32,7 @@ jobs:
           cp output/part-1-delivery-triage-prd.md _site/output/
           cp output/part-1-delivery-triage-extended.md _site/output/
           cp output/part-1-scope-assumptions.md _site/output/
+          cp output/part-2-context-tooling-prd.md _site/output/
           cp output/part-2-context-tooling-design.md _site/output/
           cp output/part-2-example-daily-brief.md _site/output/
           cp output/part-2-design-diagram.mmd _site/output/

@@ -26,6 +26,7 @@ No build toolchain or runtime dependency is required. The workflow assembles onl
 - `output/part-1-delivery-triage-prd.md` — compact PRD
 - `output/part-1-delivery-triage-extended.md` — detailed report rendered by the site
 - `output/part-1-scope-assumptions.md` — scope and numerical guardrails
+- `output/part-2-context-tooling-prd.md` — compact Part 2 PRD
 - `output/part-2-context-tooling-design.md` — full Part 2 design
 - `output/part-2-example-daily-brief.md` — illustrative daily brief
 - `output/part-2-design-diagram.mmd` — source diagram
