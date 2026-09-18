@@ -148,3 +148,17 @@ a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); out
   a { color: #000; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt; font-weight: 400; }
 }
+
+/* The diagram follows the reading order: tool, human review, saved context. */
+.diagram-lane h3 { margin: 0 0 12px; font: 700 1rem/1.4 system-ui, sans-serif; }
+.diagram-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 0 !important; margin: 0 !important; list-style: none; counter-reset: step; }
+.diagram-steps li { counter-increment: step; margin: 0; padding: 16px; border: 1px solid #aec3ba; background: white; }
+.diagram-steps strong { display: block; font-size: .95rem; }
+.diagram-steps strong::before { content: counter(step) ". "; color: var(--accent-dark); }
+.diagram-steps span { display: block; margin-top: 6px; font-size: .86rem; }
+.human-steps { counter-reset: step 4; }
+.diagram-handoff { margin: 18px 0 !important; font-weight: 600; }
+.diagram-feedback { margin-top: 20px; padding: 16px; border-left: 3px solid var(--accent); background: #e4eee8; }
+.diagram-feedback p { font-size: .86rem; margin: 6px 0 0; }
+.diagram-coverage { margin: 16px 0 0 !important; font-size: .83rem; }
+@media (max-width: 480px) { .diagram-steps { grid-template-columns: 1fr; } }

@@ -12,7 +12,7 @@ Each morning I want to answer four questions: what changed, which commitment or 
 
 ## An example morning brief
 
-This example is manually prepared and illustrative. It uses the September 18 Part 1 review, including September 17 board observations. The proposed action has not been sent, and the system that would produce a brief has not been built.
+This example is manually prepared and illustrative. It uses the September 18 Part 1 review, including September 17 board observations. The proposed action has not been sent.
 
 ### Zebra release: confirm the remaining holds
 
@@ -38,7 +38,7 @@ The tool would read selected sources and retain their links, item identifiers, u
 
 A dependency graph is a map of what depends on what. A dependency record would carry its evidence, confidence, contact or owner if known, needed-by date, and status. Unknown is valid: the system must not invent a relationship because two items share a label.
 
-These issues share external prerequisites. The tool would flag changes to those prerequisites and show which work may be affected, keeping unconfirmed relationships tentative.
+For NU7, [#11445](https://github.com/ZcashFoundation/zebra/issues/11445) records prerequisites involving branch IDs and a librustzcash release, while [#11446](https://github.com/ZcashFoundation/zebra/issues/11446) also needs activation heights. The tool would flag changes to those prerequisites and show which work may be affected, keeping unconfirmed relationships tentative.
 
 ### What comes in
 
@@ -58,7 +58,7 @@ A small persistent record store, independent of the AI conversation, would hold:
 - source observations, links, timestamps, coverage, and collection failures;
 - work items and tentative or confirmed dependency relationships;
 - confirmed decisions, their rationale and source, and when they should be revisited;
-- open follow-ups, their disposition, and the next agreed check; and
+- open follow-ups, whether they were accepted, dismissed, or deferred, and the next agreed check; and
 - distinctions between merged, released, and activated work.
 
 Existing team records would remain authoritative for status and commitments. The retained context would keep pointers and concise notes rather than copy whole chat histories. New evidence could supersede a decision without erasing its history.
@@ -69,7 +69,7 @@ Existing team records would remain authoritative for status and commitments. The
 | --- | --- |
 | Review wait or possible stalled work | A missed agreed checkpoint, missing owner, missing reviewer, or unresolved blocker. If no checkpoint exists, ask what is expected rather than infer delay from age alone. |
 | Dependency change | A prerequisite is resolved while downstream work remains held, an upstream release is available but adoption is open, or a needed-by date changes. |
-| Possible downstream impact | A changed upstream item may affect recorded dependants or a release checkpoint; show the chain and the link that needs confirmation. |
+| Possible downstream impact | A changed upstream item may affect work that depends on it or a release checkpoint; show the chain and the link that needs confirmation. |
 | Drift or conflicting evidence | A confirmed commitment may be at risk, or the board and linked work disagree. Show both sources and the uncertainty. |
 | Decision change or expiry | A decision is superseded, its revisit date is due, or current work no longer matches its rationale. |
 | External request | Show the request at the next daily check with related work and a suggested contact. Flag it after one business day if unanswered. |
@@ -85,7 +85,12 @@ I would validate source links, accept or dismiss suggestions, coordinate follow-
 
 ## How I would try it
 
-**Week 1:** agree sources, commitments, pause rules, and examples to test. **Week 2:** trial repository collection and a private brief alongside manual triage. **Week 3:** add selected forum or chat sources and test pauses, conflicting evidence, and missed-run recovery. **Week 4:** assess usefulness and maintenance effort, then adjust coverage. WIP dashboards and broader reporting can wait until the brief proves useful.
+1. Week 1: agree sources, commitments, pause rules, and examples to test.
+2. Week 2: try repository collection and a private brief alongside my manual review.
+3. Week 3: add selected forum or chat sources. Check how the tool handles pauses, conflicting evidence, and missed runs.
+4. Week 4: compare the results with my manual review and decide what to keep or change.
+
+ WIP dashboards and broader reporting can wait until the brief proves useful.
 
 Before expanding, I would test these failure cases:
 

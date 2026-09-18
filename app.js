@@ -13,6 +13,7 @@
     'README.md': 'index.html',
     'part-1-delivery-triage.md': 'index.html',
     'part-1-delivery-triage-extended.md': 'report.html',
+    'part-1-evidence-notes.md': 'report.html',
     'part-1-scope-assumptions.md': 'scope-notes.html',
     'part-2-context-tooling-design.md': 'part-2.html',
     'part-2-context-tooling-prd.md': 'design-notes.html',
@@ -20,6 +21,7 @@
   };
 
   const rewriteHref = (href) => {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(href)) return href;
     if (href.startsWith('http://') || href.startsWith('https://')) return href;
     if (href.startsWith('../research/')) {
       return `https://github.com/arcayne/zcash-TPM/blob/main/${href.slice(3)}`;
@@ -199,11 +201,19 @@
       .then((mermaid) => {
         const labels = {};
         for (const match of mermaid.matchAll(/([a-z][\w-]*)\["([^"]+)"\]/gi)) labels[match[1]] = match[2];
-        const mainOrder = ['collect', 'connect', 'compare', 'brief', 'review', 'follow'];
-        const returnLabel = mermaid.match(/follow\s*-->\|([^|]+)\|\s*compare/)?.[1];
-        if (mainOrder.some((id) => !labels[id]) || !returnLabel) throw new Error('Diagram source does not contain the expected communication flow.');
-        const steps = mainOrder.map((id, index) => `<li><span>${escapeHtml(labels[id])}</span>${index < mainOrder.length - 1 ? '<b aria-hidden="true">→</b>' : ''}</li>`).join('');
-        container.outerHTML = `<figure class="relationship-diagram" aria-labelledby="diagram-title"><figcaption id="diagram-title">Proposed context loop</figcaption><ol class="diagram-flow">${steps}</ol><div class="diagram-notes"><p><strong>${escapeHtml(labels.coverage || 'Missing source coverage')}</strong> is shown alongside the draft brief.</p><p><strong>Return loop:</strong> ${escapeHtml(returnLabel)} feed back into comparison.</p></div><a class="source-detail" href="${source}">Diagram source (.mmd)</a></figure>`;
+        const details = {};
+        for (const match of mermaid.matchAll(/%% detail (\w+): (.+)/g)) details[match[1]] = match[2];
+        const ids = ['sources', 'connect', 'compare', 'brief', 'review', 'follow', 'memory', 'coverage'];
+        if (ids.some((id) => !labels[id] || !details[id])) throw new Error('The diagram is missing a step or explanation.');
+        const step = (id) => `<li><strong>${escapeHtml(labels[id])}</strong><span>${escapeHtml(details[id])}</span></li>`;
+        container.outerHTML = `<figure class="relationship-diagram" aria-labelledby="diagram-title">
+          <figcaption id="diagram-title">From source changes to my next follow-up</figcaption>
+          <div class="diagram-lane"><h3>The tool prepares</h3><ol class="diagram-steps">${['sources','connect','compare','brief'].map(step).join('')}</ol></div>
+          <p class="diagram-handoff">↓ A draft for my review</p>
+          <div class="diagram-lane"><h3>I check and act</h3><ol class="diagram-steps human-steps">${['review','follow'].map(step).join('')}</ol></div>
+          <div class="diagram-feedback"><strong>↩ ${escapeHtml(labels.memory)}</strong><p>${escapeHtml(details.memory)} are used in the next comparison. I record confirmed decisions and the next check after following up.</p></div>
+          <p class="diagram-coverage"><strong>${escapeHtml(labels.coverage)}:</strong> ${escapeHtml(details.coverage)}.</p>
+          <a class="source-detail" href="${source}">Diagram source (.mmd)</a></figure>`;
       })
       .catch((error) => {
         container.innerHTML = `<div class="error"><strong>Diagram unavailable.</strong> ${escapeHtml(error.message)} <a href="${source}">Open its source.</a></div>`;

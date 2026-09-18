@@ -1,8 +1,17 @@
-flowchart LR
-    collect["Collect changes and source links"] --> connect["Connect work and dependencies"]
-    connect --> compare["Compare with saved decisions and commitments"]
-    compare --> brief["Draft an evidence-backed brief"]
-    brief --> review["TPM review"]
-    review --> follow["Follow up with the team"]
-    follow -->|Confirmed decisions and next check| compare
-    coverage["Missing source coverage"] -.-> brief
+flowchart TD
+    sources["Read selected sources"] --> connect["Connect the work"]
+    connect --> compare["Check what changed"]
+    memory["Saved context"] --> compare
+    compare --> brief["Draft the daily brief"]
+    coverage["Show missing coverage"] -.-> brief
+    brief --> review["I review the evidence"]
+    review --> follow["I follow up with the team"]
+    follow -->|Record confirmed decisions and the next check| memory
+    %% detail sources: GitHub, public discussions, and approved chats
+    %% detail connect: Link issues, PRs, and possible dependencies
+    %% detail compare: Check commitments, review waits, and possible downstream impact
+    %% detail brief: Sources, uncertainty, and proposed next steps
+    %% detail review: Confirm links; accept, dismiss, or defer
+    %% detail follow: Resolve questions with the responsible people
+    %% detail memory: Confirmed decisions, dependencies, pause reasons, and next checks
+    %% detail coverage: Name failed checks and the last successful refresh

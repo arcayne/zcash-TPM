@@ -10,7 +10,7 @@ These are the five follow-ups I would start with. The board observations are fro
 
 The team has work underway across releases, wallets, synchronization, and cryptographic tools. I would first focus on work waiting for review, testing, or release. Zebra's v6.4.0 release is on hold, a wallet integration test needs investigation, and an ed25519-zebra key-conversion fix needs review. NU7 now has an agreed timeline, so I would also check what ZF needs from other teams to meet it.
 
-On September 17, the board showed 21 cards In Engineering, 14 Ready for Review, 11 In Review, and 2 Reviewed. Issues and PRs can overlap, and some cards need cleanup, so these numbers do not prove that the team is overloaded. They suggest a lot of context to carry across apparently active work. I would confirm what is actually moving and keep the next steps and dependencies visible. If two commitments compete, I would document the tradeoff and take it to the Head of Engineering.
+On September 17, the board showed 21 cards In Engineering, 14 Ready for Review, 11 In Review, and 2 Reviewed. Issues and PRs can overlap, and some cards need cleanup, so these numbers do not prove that the team is overloaded. They suggest that the team is carrying a lot of context across work that appears active. I would confirm what is actually moving and keep the next steps and dependencies visible. If two commitments compete, I would document the tradeoff and take it to the Head of Engineering.
 
 The team explained that it uses epics to group work and that milestones are legacy. Epics stay in place on the board and have no estimates. They can close when remaining optional work is dropped, so I would check the agreed child issues and what has shipped before calling the work complete.
 
@@ -83,7 +83,7 @@ I would ask what still prevents the merge, who will follow through with OSS-Fuzz
 ## What I would follow up later or leave alone
 
 - The [fork-choice fix](https://github.com/ZcashFoundation/zebra/pull/11341) merged into `main` on September 17 after the requested changes were addressed, and its linked issue is closed. I would let it progress through ordinary integration and release checks rather than restart a review chase.
-- Reconcile FROST's remaining scope and dependencies. The original COCKTAIL-DKG feedback was replaced by [C2SP #299](https://github.com/C2SP/C2SP/issues/299), and one tooling prerequisite has merged. Neither fact makes all the remaining work ready.
+- Check FROST's remaining scope and dependencies. The original COCKTAIL-DKG feedback was replaced by [C2SP #299](https://github.com/C2SP/C2SP/issues/299), and one tooling prerequisite has merged. Neither fact makes all the remaining work ready.
 - Check Zeeder's full release-to-deployment evidence at its next checkpoint. Confirm the draft prober's production intent; its dev deployment does not establish production coverage.
 - Respect the explicit pause on [sync investigation #10919](https://github.com/ZcashFoundation/zebra/issues/10919) and the team's planned legacy infra cleanup. Leave large ZSA and v2 sync drafts out of a blanket review chase. A NU7 label alone does not establish committed ZSA scope.
 
