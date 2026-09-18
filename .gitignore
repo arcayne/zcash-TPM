@@ -1,0 +1,7 @@
+.DS_Store
+research/
+_site/
+output/*
+!output/part-1-delivery-triage-prd.md
+!output/part-1-delivery-triage-extended.md
+!output/part-1-scope-assumptions.md
