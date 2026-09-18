@@ -1,0 +1,11 @@
+flowchart TD
+    sources["GitHub, forum and approved chat channels"] --> collect["Collect changes and source links<br/>Record what was checked and what failed"]
+    collect --> assess["Compare with the agreed plan<br/>Rules detect changes; AI summarizes and suggests connections"]
+    context[("Saved context<br/>Evidence, confirmed decisions and open follow-ups")] --> assess
+    collect -->|Save observations| context
+    assess --> brief["Private daily brief<br/>Up to five follow-ups, evidence and unknowns"]
+    collect -. Coverage gaps .-> brief
+    brief --> review["My review as TPM<br/>Check sources, accept, dismiss or defer"]
+    review --> action["Follow up with the team<br/>Resolve questions and update existing work records"]
+    review -->|Record disposition and next check| context
+    action -->|Record confirmed decisions and their sources| context

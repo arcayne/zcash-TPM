@@ -5,3 +5,6 @@ output/*
 !output/part-1-delivery-triage-prd.md
 !output/part-1-delivery-triage-extended.md
 !output/part-1-scope-assumptions.md
+!output/part-2-context-tooling-design.md
+!output/part-2-example-daily-brief.md
+!output/part-2-design-diagram.mmd

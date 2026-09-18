@@ -28,10 +28,13 @@ jobs:
       - name: Assemble public site
         run: |
           mkdir -p _site/output
-          cp index.html prd.html report.html styles.css app.js .nojekyll _site/
+          cp index.html prd.html report.html part-2.html styles.css app.js .nojekyll _site/
           cp output/part-1-delivery-triage-prd.md _site/output/
           cp output/part-1-delivery-triage-extended.md _site/output/
           cp output/part-1-scope-assumptions.md _site/output/
+          cp output/part-2-context-tooling-design.md _site/output/
+          cp output/part-2-example-daily-brief.md _site/output/
+          cp output/part-2-design-diagram.mmd _site/output/
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
