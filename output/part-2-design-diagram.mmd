@@ -1,15 +1,8 @@
-flowchart TD
-    sources["GitHub, forum and approved chat channels"] --> collect["Collect changes and source links<br/>Record what was checked and what failed"]
-    collect --> normalize["Normalize work items<br/>Issues, PRs, releases and decisions"]
-    normalize --> discover["Find dependency links<br/>Blocks, requires, informs and external work"]
-    plan["Confirmed plan and commitments"] --> compare["Compare state with the plan"]
-    normalize --> compare
-    discover --> graph[("Context record<br/>Evidence, dependency graph, decision history")]
-    compare --> triage["Triage signals<br/>Stalled work, drift, dependency change, impact"]
-    graph --> triage
-    triage --> brief["Private daily brief<br/>Follow-ups, affected work, evidence and unknowns"]
-    collect -. Coverage gaps .-> brief
-    brief --> review["My review as TPM<br/>Check sources, accept, dismiss or defer"]
-    review --> action["Follow up with the team<br/>Confirm owners, decisions and next actions"]
-    review -->|Record disposition and next check| graph
-    action -->|Record confirmed links and decisions| graph
+flowchart LR
+    collect["Collect changes and source links"] --> connect["Connect work and dependencies"]
+    connect --> compare["Compare with saved decisions and commitments"]
+    compare --> brief["Draft an evidence-backed brief"]
+    brief --> review["TPM review"]
+    review --> follow["Follow up with the team"]
+    follow -->|Confirmed decisions and next check| compare
+    coverage["Missing source coverage"] -.-> brief

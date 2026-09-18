@@ -28,8 +28,8 @@ jobs:
       - name: Assemble public site
         run: |
           mkdir -p _site/output
-          cp index.html prd.html report.html part-2.html styles.css app.js .nojekyll _site/
-          cp output/part-1-delivery-triage-prd.md _site/output/
+          cp index.html prd.html report.html part-2.html supporting-notes.html scope-notes.html example-brief.html design-notes.html styles.css app.js .nojekyll _site/
+          cp output/part-1-delivery-triage.md _site/output/
           cp output/part-1-delivery-triage-extended.md _site/output/
           cp output/part-1-scope-assumptions.md _site/output/
           cp output/part-2-context-tooling-prd.md _site/output/

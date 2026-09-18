@@ -3,103 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Part 2: a human-reviewed design for keeping Zcash Foundation delivery context current.">
-  <title>Part 2 · Context tooling</title>
+  <meta name="description" content="Part 2: Joan De Arcayne's proposed design for keeping delivery context current.">
+  <title>Part 2: Keeping delivery context current · Joan De Arcayne</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#document">Skip to document</a>
   <header class="site-header">
-    <div class="shell nav-wrap">
-      <a class="brand" href="index.html" aria-label="Zcash Foundation delivery brief home"><span class="brand-mark">ZF</span><span>Zcash Foundation<span class="brand-sub"> / Delivery brief</span><span class="brand-dot">.</span></span></a>
-      <nav aria-label="Primary navigation"><a href="index.html">Part 1</a><a href="part-2.html#design">Part 2</a><a href="part-2.html#brief">Example brief</a></nav>
+    <div class="page-width header-inner">
+      <a class="site-identity" href="index.html">Joan De Arcayne <span>Zcash Foundation assessment</span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Part 1</a>
+        <a href="part-2.html" aria-current="page">Part 2</a>
+        <a href="supporting-notes.html">Supporting notes</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="part2-hero">
-      <div class="shell part2-hero-grid">
-        <div>
-          <div class="eyebrow">Zcash Foundation · TPM take-home · Part 2</div>
-          <h1>Keep delivery context <em>current.</em></h1>
-          <p class="hero-lede">A human-reviewed first-month design that turns changes across repositories and conversations into a short, evidence-backed brief for the next decision, with dependency and downstream-impact checks.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#design">See the design <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="index.html">Back to Part 1 <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <div class="part2-stamp"><span class="stamp-symbol">◌</span><span class="stamp-label">Proposed first-month design</span><strong>Read, verify,<br>then follow up.</strong><span class="stamp-note">Not built or evaluated yet.</span></div>
-      </div>
-    </section>
-
-    <section class="section shell" id="design">
-      <div class="section-heading"><div><div class="eyebrow">01 · The design at a glance</div><h2>A loop that keeps humans in charge.</h2></div><p>An AI suggestion stays tentative until checked. An accepted suggestion becomes an open follow-up—not a confirmed decision or completed work.</p></div>
-      <div class="diagram-card" role="img" aria-label="Flow from approved sources through collection, work-item normalization, dependency and impact scanning, a private daily brief, human review, and team follow-up, with a context record feeding the triage loop.">
-        <div class="diagram-caption"><span>Context loop</span><a href="output/part-2-design-diagram.mmd">Open Mermaid source ↗</a></div>
-        <svg class="context-diagram" viewBox="0 0 1100 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d7ee83"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6aa9a1"/></marker></defs>
-          <path class="diagram-line" d="M170 128 H218"/><path class="diagram-line" d="M390 128 H438"/><path class="diagram-line" d="M610 128 H658"/><path class="diagram-line" d="M830 128 H878"/>
-          <path class="diagram-line-muted" d="M520 210 V355 H252"/><path class="diagram-line-muted" d="M252 355 V184"/><path class="diagram-line-muted" d="M520 210 V284"/><path class="diagram-line-muted" d="M610 410 H740 V184"/><path class="diagram-line-muted" d="M960 184 V486 H520 V445"/>
-          <g class="diagram-node diagram-node-source"><rect x="20" y="85" width="150" height="86" rx="12"/><text x="95" y="117" text-anchor="middle"><tspan x="95">GitHub, forum</tspan><tspan x="95" dy="22">&amp; approved chat</tspan></text></g>
-          <g class="diagram-node"><rect x="220" y="85" width="170" height="86" rx="12"/><text x="305" y="112" text-anchor="middle"><tspan x="305">Collect changes</tspan><tspan x="305" dy="19">and source links</tspan><tspan x="305" dy="19">Record failures</tspan></text></g>
-          <g class="diagram-node"><rect x="440" y="85" width="170" height="86" rx="12"/><text x="525" y="106" text-anchor="middle"><tspan x="525">Normalize work</tspan><tspan x="525" dy="19">Find dependencies</tspan><tspan x="525" dy="19">Compare with plan</tspan></text></g>
-          <g class="diagram-node"><rect x="660" y="85" width="170" height="86" rx="12"/><text x="745" y="112" text-anchor="middle"><tspan x="745">Private daily brief</tspan><tspan x="745" dy="19">Up to five follow-ups</tspan><tspan x="745" dy="19">Evidence + unknowns</tspan></text></g>
-          <g class="diagram-node diagram-node-review"><rect x="880" y="85" width="190" height="86" rx="12"/><text x="975" y="112" text-anchor="middle"><tspan x="975">TPM review</tspan><tspan x="975" dy="19">Check, accept,</tspan><tspan x="975" dy="19">dismiss or defer</tspan></text></g>
-          <g class="diagram-node diagram-node-context"><rect x="340" y="284" width="270" height="126" rx="18"/><text x="475" y="314" text-anchor="middle"><tspan x="475">Context record</tspan><tspan x="475" dy="23">Evidence · dependency graph</tspan><tspan x="475" dy="23">Decision history · follow-ups</tspan></text></g>
-          <g class="diagram-node diagram-node-action"><rect x="740" y="355" width="220" height="90" rx="12"/><text x="850" y="386" text-anchor="middle"><tspan x="850">Follow up with team</tspan><tspan x="850" dy="22">Confirm owners and links</tspan><tspan x="850" dy="22">Record decisions</tspan></text></g>
-          <text class="diagram-label" x="690" y="332">disposition + next check</text><text class="diagram-label" x="630" y="476">confirmed decisions + sources</text><text class="diagram-label" x="284" y="263">save observations</text>
-        </svg>
-      </div>
-    </section>
-
-    <section class="section section-tint">
-      <div class="shell">
-        <div class="section-heading"><div><div class="eyebrow">02 · Memory design</div><h2>Remember the decision, not just the alert.</h2></div><p>The brief should preserve enough context to avoid re-investigating the same question while keeping uncertainty explicit.</p></div>
-        <div class="memory-grid">
-          <article class="memory-card"><span class="memory-icon">01</span><h3>Evidence ledger</h3><p>Keep the source link, observation date, coverage, and last successful check. A failed refresh is visible; it never becomes “no change.”</p></article>
-          <article class="memory-card"><span class="memory-icon">02</span><h3>Decision record</h3><p>Capture confirmed decisions, their source, the responsible owner, and the checkpoint that makes the decision actionable.</p></article>
-          <article class="memory-card"><span class="memory-icon">03</span><h3>Dependency graph</h3><p>Link work with evidence, confidence, owner, and needed-by date. Possible downstream impact stays tentative until someone confirms it.</p></article>
-          <article class="memory-card"><span class="memory-icon">04</span><h3>Follow-up state</h3><p>Track accepted, dismissed-with-reason, deferred, and due items. Read status alone never closes the action.</p></article>
-          <article class="memory-card"><span class="memory-icon">05</span><h3>Source health</h3><p>Show what was checked, what was unavailable, and where coverage is incomplete so missing context cannot masquerade as stability.</p></article>
-        </div>
-        <div class="human-callout"><div class="callout-symbol">✦</div><div><div class="eyebrow">What stays human</div><p>Rules detect changes and AI suggests links or summaries. Priority, ownership, scope, outreach, escalation, dependency confirmation, and release decisions stay with the responsible people. The TPM verifies and follows through using normal team channels.</p></div></div>
-      </div>
-    </section>
-
-    <section class="section shell" id="checks">
-      <div class="section-heading"><div><div class="eyebrow">03 · Acceptance checks</div><h2>Test the failure modes before expanding.</h2></div><p>These are proposed checks for the first-month trial—not measured results. The trial continues only if it earns trust alongside manual triage.</p></div>
-      <div class="checks-layout">
-        <div class="check-list">
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Resolved blocker, release still on hold</h3><p>Keep the release hold visible when the named consensus blocker is resolved but other release criteria remain open.</p></div></div>
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Deliberately paused work</h3><p>Respect a confirmed pause and keep it quiet until the agreed checkpoint or a new source change.</p></div></div>
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Failed source refresh</h3><p>Report “status not refreshed” with the failed source and last known coverage rather than infer that nothing changed.</p></div></div>
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Conflicting evidence</h3><p>Surface the disagreement and its sources for review; never silently choose a winner or turn a suggestion into a fact.</p></div></div>
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Dependency needs confirmation</h3><p>Keep an inferred link separate from a confirmed block and show the evidence, confidence, owner, and needed-by date.</p></div></div>
-          <div class="check-item"><span class="check-box">✓</span><div><h3>Upstream change with downstream impact</h3><p>Trace the affected work and release checkpoint, then ask for confirmation before calling downstream delivery at risk.</p></div></div>
-        </div>
-        <aside class="trial-card"><div class="eyebrow">Continue only if</div><strong>The trial reduces daily review time, keeps confirmed pauses quiet, and surfaces the important changes found in manual checks.</strong><p>WIP dashboards and broader reporting can wait until the daily brief proves useful.</p></aside>
-      </div>
-    </section>
-
-    <section class="section section-tint" id="month">
-      <div class="shell"><div class="section-heading"><div><div class="eyebrow">04 · First-month plan</div><h2>Start small. Learn where the context breaks.</h2></div><p>One release and NU7 are enough to test the loop. Coverage grows only after the review path and recovery behavior are credible.</p></div>
-        <div class="month-grid">
-          <div class="month-step"><span>WEEK 01</span><h3>Agree the frame</h3><p>Sources, commitments, pause rules, and examples to test.</p></div>
-          <div class="month-step"><span>WEEK 02</span><h3>Trial repository collection</h3><p>Run a private brief alongside manual triage.</p></div>
-          <div class="month-step"><span>WEEK 03</span><h3>Add selected conversations</h3><p>Test forum/chat sources, pauses, conflict, and missed-run recovery.</p></div>
-          <div class="month-step"><span>WEEK 04</span><h3>Assess and adjust</h3><p>Measure usefulness and maintenance effort before expanding coverage.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="brief">
-      <div class="section-heading"><div><div class="eyebrow">05 · Example morning brief</div><h2>Three follow-ups for review.</h2></div><p>Illustrative output from the Part 1 snapshot. Proposed actions remain drafts until reviewed and sent.</p></div>
-      <div class="brief-grid">
-        <article class="brief-card"><span class="brief-number">01</span><h3>Zebra release: confirm remaining holds</h3><p><strong>Why it matters:</strong> a failed wallet test and advisory semver check need a release decision.</p><p class="brief-next">Next: confirm criteria, owner, and decision date.</p></article>
-        <article class="brief-card"><span class="brief-number">02</span><h3>NU7: confirm external contacts and dates</h3><p><strong>Why it matters:</strong> branch IDs, a librustzcash release, and activation heights sit across the delivery path.</p><p class="brief-next">Next: confirm needed-by dates and what happens if one slips.</p></article>
-        <article class="brief-card"><span class="brief-number">03</span><h3>Key-conversion fix: confirm reviewer pickup</h3><p><strong>Why it matters:</strong> impact assessment and independent review are needed before deciding urgency and release path.</p><p class="brief-next">Next: identify affected versions, callers, and a reviewer.</p></article>
-      </div>
-      <div class="deliberate-note"><span class="status-dot"></span><div><strong>Deliberately not chasing:</strong> items without a decision, owner, or new evidence stay available for review rather than crowding out the next three actions.</div></div>
-      <div class="source-links"><a class="text-link" href="output/part-2-context-tooling-prd.md">Read the Part 2 PRD <span aria-hidden="true">→</span></a><a class="text-link" href="output/part-2-context-tooling-design.md">Read the full design source <span aria-hidden="true">→</span></a><a class="text-link" href="output/part-2-example-daily-brief.md">Read the example brief source <span aria-hidden="true">→</span></a><a class="text-link" href="index.html">Return to Part 1 <span aria-hidden="true">→</span></a></div>
-    </section>
+  <main class="page-width document-layout">
+    <aside class="page-nav" aria-labelledby="on-this-page">
+      <h2 id="on-this-page">On this page</h2>
+      <ul>
+        <li><a href="#what-i-want-to-make-easier">What I want to make easier</a></li>
+        <li><a href="#an-example-morning-brief">Example morning brief</a></li>
+        <li><a href="#how-it-would-work">How it would work</a></li>
+        <li><a href="#what-it-remembers">What it remembers</a></li>
+        <li><a href="#what-it-would-flag">What it would flag</a></li>
+        <li><a href="#what-stays-with-people">What stays with people</a></li>
+        <li><a href="#how-i-would-try-it">How I would try it</a></li>
+      </ul>
+    </aside>
+    <article id="document" class="prose loading" data-markdown="output/part-2-context-tooling-design.md" aria-live="polite">
+      <p>Loading Part 2: Keeping delivery context current…</p>
+      <noscript><p>JavaScript is required to render this document. <a href="output/part-2-context-tooling-design.md">Open the source document</a>.</p></noscript>
+    </article>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-grid"><div><span class="brand-mark">ZF</span><p>Zcash Foundation · Engineering delivery brief</p></div><div class="footer-links"><a href="index.html">Part 1: Delivery triage</a><a href="part-2.html">Part 2: Context tooling</a><a href="#brief">Example daily brief</a></div><div class="footer-note">Prepared 18 September 2026<br>Evidence-led · human-reviewed</div></div></footer>
+  <footer class="site-footer"><div class="page-width">Joan De Arcayne · Assessment for the Zcash Foundation · 18 September 2026</div></footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
