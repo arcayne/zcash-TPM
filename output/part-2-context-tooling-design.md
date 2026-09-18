@@ -46,7 +46,8 @@ For NU7, [#11445](https://github.com/ZcashFoundation/zebra/issues/11445) records
 | --- | --- |
 | [All Engineering board](https://github.com/orgs/ZcashFoundation/projects/22/views/1) and linked repositories | Work status, pull requests, reviews, blockers, checks, and releases. Read linked epics separately because the view hides them. |
 | Repositories linked to active dependencies | Changes outside the team that could unblock or delay the selected work. Follow relevant links rather than monitor the whole ecosystem. |
-| Forum and selected, approved chat channels | Decisions, changing requirements, external requests, and context behind a pause or blocker. |
+| Public forum discussions | Decisions, changing requirements, external requests, and context behind a pause or blocker. |
+| Later: selected Telegram, Signal, and Discord channels or groups | Follow relevant team and ecosystem conversations for decisions, blockers, dependencies, and requests that may not yet appear in GitHub. |
 | Team-confirmed plan | Commitments, owners, checkpoints, dependencies, and agreed completion evidence. Without this baseline, the tool can identify change but cannot reliably call it drift. |
 
 The team explained that GitHub milestones are legacy and epics stay in place on the board without estimates. An epic can close with optional work left unfinished. The tool needs these rules to avoid misleading reminders.
@@ -87,7 +88,7 @@ I would validate source links, accept or dismiss suggestions, coordinate follow-
 
 1. Week 1: agree sources, commitments, pause rules, and examples to test.
 2. Week 2: try repository collection and a private brief alongside my manual review.
-3. Week 3: add selected forum or chat sources. Check how the tool handles pauses, conflicting evidence, and missed runs.
+3. Week 3: try selected forum sources. Check how the tool handles pauses, conflicting evidence, and missed runs.
 4. Week 4: compare the results with my manual review and decide what to keep or change.
 
  WIP dashboards and broader reporting can wait until the brief proves useful.
@@ -102,5 +103,12 @@ Before expanding, I would test these failure cases:
 - an upstream change with possible downstream impact.
 
 I would continue only if the trial reduces daily review time, keeps confirmed pauses quiet, and surfaces the important changes found in manual checks. I would track useful follow-ups, false alarms, known misses, dependency confirmations, review time, and maintenance effort. These are proposed checks, not measured results.
+
+### Later: follow Telegram, Signal, and Discord
+
+Once the GitHub and forum brief is useful, I would add selected Telegram, Signal, and Discord channels or groups. These conversations can explain a blocker, reveal a dependency, or contain a decision that has not reached an issue yet. The aim is to connect relevant conversations to the work and follow up on what they change.
+
+I would agree which channels to follow with the team and confirm access and a practical collection method for each. Where automated collection is unavailable, I could add a short reviewed note with its source and date. Any gap in coverage would stay visible in the brief.
+
 
 *AI use: Codex helped develop and simplify the design using Part 1 findings, the assessment, and the job description. I narrowed the scope and kept decisions human. This proposal has not been built or evaluated.*

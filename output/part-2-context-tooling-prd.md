@@ -51,6 +51,12 @@ I would try cases where a release remains held after a blocker is resolved, work
 
 The trial is useful if it reduces my review time while still finding important changes. I would track useful follow-ups, false alarms, known misses, dependency confirmations, and the time spent reviewing and maintaining it. These are proposed checks, not measured results.
 
+## Later sources: Telegram, Signal, and Discord
+
+After the GitHub and forum trial, I would add selected Telegram, Signal, and Discord channels or groups. I would use them to find decisions, blockers, dependencies, and incoming requests, then connect those conversations to the relevant work.
+
+The team would agree the channels, access, and collection method. Where automation is unavailable, a reviewed note with its source and date could supply the context. The brief would show which channels are covered and which are still missing.
+
 ## Who would maintain it
 
 I would own the triage rules and daily review. During onboarding, I would agree source access, the plan to compare against, and who maintains collection and recovery. Synapse is an option to assess for reuse; the proposal does not depend on a particular tool or database.
