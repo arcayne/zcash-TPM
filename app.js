@@ -20,6 +20,7 @@
   };
 
   const rewriteHref = (href) => {
+    if (href.startsWith('http://') || href.startsWith('https://')) return href;
     if (href.startsWith('../research/')) {
       return `https://github.com/arcayne/zcash-TPM/blob/main/${href.slice(3)}`;
     }

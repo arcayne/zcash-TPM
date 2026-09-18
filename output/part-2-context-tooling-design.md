@@ -38,7 +38,7 @@ The tool would read selected sources and retain their links, item identifiers, u
 
 A dependency graph is a map of what depends on what. A dependency record would carry its evidence, confidence, contact or owner if known, needed-by date, and status. Unknown is valid: the system must not invent a relationship because two items share a label.
 
-For NU7, a first pass could show external branch IDs and a librustzcash release as prerequisites recorded by [#11445](https://github.com/ZcashFoundation/zebra/issues/11445), while [#11446](https://github.com/ZcashFoundation/zebra/issues/11446) also requires activation heights. It must not draw #11445 → #11446 as an established delivery sequence merely because both relate to NU7. Any broader chain to testnet or mainnet readiness remains tentative until the team confirms each relationship and needed-by date. A moved upstream date would prompt a possible-impact check, not an automatic claim that NU7 is blocked.
+These issues share external prerequisites. The tool would flag changes to those prerequisites and show which work may be affected, keeping unconfirmed relationships tentative.
 
 ### What comes in
 

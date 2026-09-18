@@ -4,7 +4,7 @@ A static GitHub Pages site for Joan De Arcayne's TPM take-home assessment. The s
 
 - `index.html` renders the canonical Part 1 delivery triage from `output/part-1-delivery-triage.md`.
 - `part-2.html` renders the canonical Part 2 proposal from `output/part-2-context-tooling-design.md`.
-- `supporting-notes.html` indexes the historical extended reference, scope and snapshot notes, the full illustrative brief, and optional design detail.
+- `supporting-notes.html` indexes scope and snapshot notes, the full illustrative brief, and optional design detail.
 
 `report.html` preserves the shared extended-reference URL. `prd.html` redirects to canonical Part 1.
 
